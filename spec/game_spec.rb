@@ -1,11 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  subject { Game.new }
-
-  it 'has 10 frames' do
-    expect(subject.frames).to eq 10
-  end
+  subject { Game.create }
 
   describe '#roll' do
     it 'receives the number of knocked down pins' do
@@ -14,5 +10,6 @@ RSpec.describe Game, type: :model do
   end
 
   describe '#score' do
+    it { expect(subject.score).to eq 0 }
   end
 end
